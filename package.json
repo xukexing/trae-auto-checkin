@@ -1,0 +1,54 @@
+{
+  "name": "trae-auto-checkin",
+  "displayName": "Trae 自动签到",
+  "description": "打开编辑器自动领取 Trae 每日积分签到奖励，支持状态栏显示与手动签到。",
+  "version": "1.0.4",
+  "publisher": "xkx",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "traeAutoCheckin.checkin",
+        "title": "Trae 签到：立即签到"
+      },
+      {
+        "command": "traeAutoCheckin.showBalance",
+        "title": "Trae 签到：查看积分余额"
+      }
+    ],
+    "configuration": {
+      "title": "Trae 自动签到",
+      "properties": {
+        "traeAutoCheckin.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "启动编辑器时自动签到（每天最多一次）"
+        },
+        "traeAutoCheckin.showNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "签到完成后弹出通知"
+        },
+        "traeAutoCheckin.retryMinutes": {
+          "type": "number",
+          "default": 30,
+          "description": "签到失败后自动重试的间隔（分钟）"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "license": "MIT"
+}

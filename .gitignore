@@ -1,0 +1,13 @@
+# 打包产物
+*.vsix
+
+# IDE 本地规则
+.trae/
+
+# 临时脚本（含令牌的发布脚本等）
+publish-*.ps1
+debug*.js
+
+# 依赖与日志
+node_modules/
+*.log
